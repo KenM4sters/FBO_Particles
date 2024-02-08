@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>13 - 3D Text</title>
+    <title>27 - Code structuring</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <canvas class="webgl"></canvas>
+    <main>
+        <div class="info-wrapper">
+            <h1> Introduction </h1>
+            <p> In this simulation, 500,000 particles are animated on each frame, initially forming a cube and quickly transforming into a sphere in an indefinite loop.
+            </p>
+            <p> Using traditional methods, animating this many particles on each frame would usually cause a drop in frame rate on even modern computers.
+            </p>
+            <p>
+                Here, however, we're using a method known as GPGPU rendering, or Frame Buffer Output (FBO), which involves saving
+                the positions of each particle as a texture, updating that texture in the fragment shader, and then passing that texture 
+                as a uniform to the vertex shader. For this to work, we have to render two different scenes.
+            </p>
+            <p>
+                You can learn more <a href="https://barradeau.com/blog/?p=621" target="_blank">here</a>
+            </p>
+        </div>
+    </main>
     <script type="module" src="./script.js"></script>
 </body>
 </html>
